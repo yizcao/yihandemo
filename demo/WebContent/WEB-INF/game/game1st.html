@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>
+	var min0 = 0;
+	var min1 = 0;
+	var sec0 = 0;
+	var sec1 = 0;
+	var t;
+	function timeCount()
+	{
+		if (sec0==9 && sec1==5 && min0==9) {
+			min1++;
+			min0=sec1=sec0=0;
+			document.getElementById('timep').innerHTML = min1 + "" + min0 + ":" + sec1 + "" + sec0;
+		}else if (sec0==9 && sec1==5) {
+			min0++;
+			sec1=sec0=0;
+			document.getElementById('timep').innerHTML = min1 + "" + min0 + ":" + sec1 + "" + sec0;
+		}else if(sec0==9){
+			sec0=0;
+			sec1++;
+			document.getElementById('timep').innerHTML = min1 + "" + min0 + ":" + sec1 + "" + sec0;
+		}else {
+			sec0++;
+			document.getElementById('timep').innerHTML = min1 + "" + min0 + ":" + sec1 + "" + sec0;
+		}
+		
+		t = setTimeout("timeCount()",1000);
+	}
+	
+	function timefunc(){
+		min0 = 0;
+		min1 = 0;
+		sec0 = 0;
+		sec1 = 0;
+		unsolved();
+		clearTimeout(t);
+		/* document.getElementById('timep').innerHTML = "00:00";
+		alert(document.getElementById('timep').innerHTML); */
+		timeCount();
+	}
+	
+	function pausetime(){
+		document.getElementById('timep').innerHTML = min1 + "" + min0 + ":" + sec1 + "" + sec0;
+		clearTimeout(t);
+	}
+	
+	function solved(){
+		document.getElementById('rightcenter').style.background="url(/demo/img/1st/1stafter.png)";
+	}
+	
+	function unsolved(){
+		document.getElementById('rightcenter').style.background="url(/demo/img/1st/before_right_center.png)";
+	}
+	
+	function exist(){
+		document.getElementById.
+	}
+</script>
+</head>
+<body>
+	<!-- dw part:  -->
+	<div id="main" style="width: 850px; height: 637px; background-image: url('/demo/img/1st/1stbigback.png');"> 
+	<div id="left" style="width: 160px; height: 630px; margin-left: 30px; padding-top: 50px; float: left;">
+		
+	<div id="lefttime" style="width: 160px; height: 200px; 
+			background-image: url(/demo/img/1st/1st_time.png); 
+			">
+		<!-- <div id="timediv" style="margin-top: 100px; height: 0px; text-align: center;">
+			<p id="time" style="color: white; font-size: x-large;">00:00</p>
+		</div>  -->
+		<!--<p id="time" style="color: white; font-size: x-large;">00:00</p>  -->
+		<div style="float: left; margin-top: 130px; width: 160px; text-align: center;">
+			<p id="timep" style="font-size: x-large; color: white;">00:00</p>
+		</div>
+	</div>
+			
+	<div id="leftbuttons" style="background-image: url(/demo/img/1st/left_buttons.png); width: 160px; height: 276px;; margin-top: 50px;">
+			<table>
+				<tr style="width: 160px;height: 40px;">
+					<td >
+						<div style="width: 160px;height: 40px;" onclick="timefunc()"></div>
+					</td>
+				</tr>
+				<tr style="width: 160px;height: 50px;">
+					<td>
+						<div onclick="pausetime()" style="width: 160px;height: 50px;"></div>
+					</td>
+				</tr>
+				<tr style="width: 160px;height: 50px;">
+					<td>
+						<div onclick="solved()" style="width: 160px;height: 50px;"></div>
+					</td>
+				</tr>
+				<tr style="width: 160px;height: 50px;">
+					<td>
+						<div onclick="exist()" style="width: 160px;height: 50px;"></div>
+					</td>
+				</tr>
+			</table>
+	</div>
+	</div>
+		
+		<div id="right" style="float: right; width: 600px; height: 600px; padding-right: 18px; padding-top: 15px;" >
+			<div id="righttop" style="background-image: url(/demo/img/1st/1st_right_top.png); width: 600px; height: 50px;">
+			</div>
+			
+			<div id="rightcenter" style="background-image: url(/demo/img/1st/before_right_center.png); width: 449px; height: 450px; float: left">
+			</div>
+			
+			<div id="rightright" style="background-image: url(/demo/img/1st/before_right_right.png); width: 120px; height: 536px; float: right; margin-top: 12px; margin-right: 20px;">
+			</div>
+			
+			<div id="rightbuttom" style=" background-image: url(/demo/img/1st/1st_right_buttom.png); width: 420px; height: 85px; float: left; margin-left: 15px; margin-top: 20px"></div>
+			
+		</div>
+	</div>
+</body>
+</html>
