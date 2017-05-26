@@ -32,7 +32,7 @@
 		t = setTimeout("timeCount()",1000);
 	}
 	
-	function timefunc(){
+	function newgame(){
 		min0 = 0;
 		min1 = 0;
 		sec0 = 0;
@@ -61,6 +61,65 @@
 		document.getElementById("exitgame1st").submit();
 		alert(11);
 	}
+	
+</script>
+
+<!-- 底部头像change -->
+<script>
+	
+	var x;
+	var y;
+	var status=0;
+	
+	function mouseMove(ev){
+		
+		if (status==0) {
+			Ev= ev || window.event;
+			var mousePos = mouseCoords(ev);
+			document.getElementById("xxx").value = mousePos.x;
+			x = mousePos.x;
+			y = mousePos.y;
+			document.getElementById("yyy").value = mousePos.y;
+			
+			document.getElementById("left1").style.left=x+"px";
+			document.getElementById("left1").style.top=y+"px";
+		}else if(status ==1){
+			alert(status);
+			document.getElementById("left1").style.left="50px";
+			document.getElementById("left1").style.top="50px";
+		}
+		
+	}
+	
+	function mouseCoords(ev){
+		
+		if(ev.pageX || ev.pageY){
+			return {x:ev.pageX, y:ev.pageY};
+			}
+			return{
+				x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+				y:ev.clientY + document.body.scrollTop - document.body.clientTop
+			}
+	}
+	
+	function GetMouse(){
+		status=0;
+		document.onmousemove = mouseMove;
+	}
+	
+	function stopGetMouse(){
+		document.onmousemove = "";
+		document.getElementById("left1").style.display="none";
+		status=1;
+		alert(status);
+	}
+</script>
+
+<!-- execute head icons -->
+<script type="text/javascript">
+	function moveheadtocenter(){
+		
+	}
 </script>
 </head>
 <body>
@@ -82,12 +141,12 @@
 			
 	<div id="leftbuttons" style="background-image: url(/demo/img/1st/left_buttons.png); width: 160px; height: 276px;; margin-top: 50px;">
 			<table>
-				<tr style="width: 160px;height: 40px;">
+				<tr id="newgame" style="width: 160px;height: 40px;">
 					<td >
-						<div style="width: 160px;height: 40px;" onclick="timefunc();"></div>
+						<div style="width: 160px;height: 40px;" onclick="newgame();"></div>
 					</td>
 				</tr>
-				<tr style="width: 160px;height: 50px;">
+				<tr id="pause" style="width: 160px;height: 50px;">
 					<td>
 						<div onclick="pausetime()" style="width: 160px;height: 50px;"></div>
 					</td>
@@ -118,7 +177,7 @@
 			<div id="rightcenter" style="/* background-image: url(/demo/img/1st/before_right_center.png); */ width: 449px; height: 450px; float: left">
 				<table  align="center" cellpadding="0" cellspacing="0">
 					<tr>
-						<td ><div id="" style=""><img alt="" src="/demo/img/1st/center1.png" ></div></td>
+						<td ><div id="" style="" onclick="stopGetMouse()"><img alt="" src="/demo/img/1st/center1.png" ></div></td>
 						<td><div id="" style=""><img alt="" src="/demo/img/1st/center2.png" ></div></td>
 					</tr>
 					<tr>
@@ -134,7 +193,7 @@
 			<div id="rightbuttom" style=" /* background-image: url(/demo/img/1st/1st_right_buttom.png);  */width: 420px; height: 85px; float: left; margin-left: 15px; margin-top: 20px">
 				<table >
 					<tr>
-						<td><div id="left1" style="margin-left: 15px;"><img alt="" src="/demo/img/1st/left1.png" ></div></td>
+						<td><div id="left1" style="margin-left: 15px;" onclick="GetMouse()"><img alt="" src="/demo/img/1st/left1.png" ></div></td>
 						<td><div id="left2" style="margin-left: 15px;"><img alt="" src="/demo/img/1st/left2.png" ></div></td>
 						<td><div id="left3" style="margin-left: 15px;"><img alt="" src="/demo/img/1st/left3.png" ></div></td>
 						<td><div id="left4" style="margin-left: 15px;"><img alt="" src="/demo/img/1st/left4.png" ></div></td>
