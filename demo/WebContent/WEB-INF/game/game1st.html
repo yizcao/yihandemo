@@ -1,8 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style type="text/css">
+	.centericons_a1{
+		height: 90px;
+		width: 100px;
+		padding-top: 25px;
+		padding-left:7px;
+	}
+	.centericons_a2{
+		height: 90px;
+		width: 100px;
+		padding-top: 25px;
+		padding-left:12px;
+	}
+
+	.centericons_b1{
+		height: 90px;
+		width: 90px;
+		padding-top: 15px;
+		padding-left:10px;
+	}
+	.centericons_b2{
+		height: 90px;
+		width: 90px;
+		padding-top: 15px;
+		padding-left:13.5px;
+	}
+	.centericons_c1{
+		height: 90px;
+		width: 90px;
+		padding-top: 28px;
+		padding-left:9px;
+	}
+	.centericons_d1{
+		height: 90px;
+		width: 90px;
+		padding-top:16px;
+		padding-left:9px;
+	}
+	.centericons_d2{
+		height: 90px;
+		width: 90px;
+		padding-top: 15px;
+		padding-left:13px;
+	}
+</style>
+
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>1st</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 	var min0 = 0;
@@ -40,7 +87,7 @@
 		unsolved();
 		clearTimeout(t);
 		/* document.getElementById('timep').innerHTML = "00:00";*/
-		alert(document.getElementById('timep').innerHTML); 
+		/* alert(document.getElementById('timep').innerHTML);  */
 		timeCount();
 	}
 	
@@ -50,21 +97,29 @@
 	}
 	
 	function solved(){
+		pausetime();
 		document.getElementById('rightcenter').style.background="url(/demo/img/1st/1stafter.png)";
 	}
 	
 	function unsolved(){
-		document.getElementById('rightcenter').style.background="url(/demo/img/1st/before_right_center.png)";
+		document.getElementById('rightcenter').style.background="url(/demo/img/1st/before_center.png)";
+		document.getElementById("center_a2").src="";
+		document.getElementById("center_a4").src="";
+		document.getElementById("center_b1").src="";
+		document.getElementById("center_b4").src="";
+		document.getElementById("center_c2").src="";
+		document.getElementById("center_d1").src="";
+		document.getElementById("center_d4").src="";
 	}
 	
 	function exist(){
-		document.getElementById("exitgame1st").submit();
 		alert(11);
+		document.getElementById("exitgame1st").submit();
 	}
 	
 </script>
 
-<!-- 底部头像change -->
+
 <script>
 	
 	var x;
@@ -115,11 +170,228 @@
 	}
 </script>
 
+<!-- 底部头像change -->
 <!-- execute head icons -->
 <script type="text/javascript">
 	var headstatus = -1;
-	function moveheadtocenter(){
-		
+	
+	var count1 = count2 = count3 = count4 = count5 = count6 = count7 = 0;
+	
+	function count(){
+		if (count1+count2+count3+count4+count5+count6+count7==7) {
+			exist();
+		}else{
+			return;
+		}
+	}
+	
+	function changeleft1(){
+		headstatus = 1;
+	}
+	function changeleft2(){
+		headstatus = 2;
+	}
+	function changeleft3(){
+		headstatus = 3;
+	}
+	function changeleft4(){
+		headstatus = 4;
+	}
+	
+	function setheadicona2(){
+		if (headstatus==1) {
+			document.getElementById("center_a2").src="/demo/img/1st/left1_blue.png";
+			count1=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==2) {
+			document.getElementById("center_a2").src="/demo/img/1st/left2_blue.png";
+			count1=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==3) {
+			document.getElementById("center_a2").src="/demo/img/1st/left3_blue.png";
+			count1=1;
+			headstatus=-1;
+			count();
+		} else if (headstatus==4) {
+			document.getElementById("center_a2").src="/demo/img/1st/left4_blue.png";
+			count1=0;
+			headstatus=-1;
+			count();
+		}else {
+			document.getElementById("center_a2").src="";
+			count1=0;
+			headstatus=-1;
+		}
+	}
+	
+	function setheadicona4(){
+		if (headstatus==1) {
+			document.getElementById("center_a4").src="/demo/img/1st/left1_blue.png";
+			count2=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==2) {
+			document.getElementById("center_a4").src="/demo/img/1st/left2_blue.png";
+			count2=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==3) {
+			document.getElementById("center_a4").src="/demo/img/1st/left3_blue.png";
+			count2=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==4) {
+			document.getElementById("center_a4").src="/demo/img/1st/left4_blue.png";
+			count2=1;
+			headstatus=-1;
+			count();
+		}else {
+			document.getElementById("center_a4").src="";
+			count2=0;
+			headstatus=-1;
+		}
+	}
+	
+	function setheadiconb1(){
+		if (headstatus==1) {
+			document.getElementById("center_b1").src="/demo/img/1st/left1_blue.png";
+			count3=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==2) {
+			document.getElementById("center_b1").src="/demo/img/1st/left2_blue.png";
+			count3=1;
+			headstatus=-1;
+			count();
+		} else if (headstatus==3) {
+			document.getElementById("center_b1").src="/demo/img/1st/left3_blue.png";
+			count3=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==4) {
+			document.getElementById("center_b1").src="/demo/img/1st/left4_blue.png";
+			count3=0;
+			headstatus=-1;
+			count();
+		}else {
+			document.getElementById("center_b1").src="";
+			count3=0;
+			headstatus=-1;
+		}
+	}
+	
+	function setheadiconb4(){
+		if (headstatus==1) {
+			document.getElementById("center_b4").src="/demo/img/1st/left1_blue.png";
+			count4=1;
+			headstatus=-1;
+			count();
+		} else if (headstatus==2) {
+			document.getElementById("center_b4").src="/demo/img/1st/left2_blue.png";
+			count4=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==3) {
+			document.getElementById("center_b4").src="/demo/img/1st/left3_blue.png";
+			count4=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==4) {
+			document.getElementById("center_b4").src="/demo/img/1st/left4_blue.png";
+			count4=0;
+			headstatus=-1;
+			count();
+		}else {
+			document.getElementById("center_b4").src="";
+			count4=0;
+			headstatus=-1;
+		}
+	}
+	
+	function setheadiconc2(){
+		if (headstatus==1) {
+			document.getElementById("center_c2").src="/demo/img/1st/left1_blue.png";
+			count5=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==2) {
+			document.getElementById("center_c2").src="/demo/img/1st/left2_blue.png";
+			count5=1;
+			headstatus=-1;
+			count();
+		} else if (headstatus==3) {
+			document.getElementById("center_c2").src="/demo/img/1st/left3_blue.png";
+			count5=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==4) {
+			document.getElementById("center_c2").src="/demo/img/1st/left4_blue.png";
+			count5=0;
+			headstatus=-1;
+			count();
+		}else {
+			document.getElementById("center_c2").src="";
+			count5=0;
+			headstatus=-1;
+		}
+	}
+	
+	function setheadicond1(){
+		if (headstatus==1) {
+			document.getElementById("center_d1").src="/demo/img/1st/left1_blue.png";
+			count6=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==2) {
+			document.getElementById("center_d1").src="/demo/img/1st/left2_blue.png";
+			count6=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==3) {
+			document.getElementById("center_d1").src="/demo/img/1st/left3_blue.png";
+			count6=1;
+			headstatus=-1;
+			count();
+		} else if (headstatus==4) {
+			document.getElementById("center_d1").src="/demo/img/1st/left4_blue.png";
+			count6=0;
+			headstatus=-1;
+			count();
+		}else {
+			document.getElementById("center_d1").src="";
+			count6=0;
+			headstatus=-1;
+		}
+	}
+	
+	function setheadicond4(){
+		if (headstatus==1) {
+			document.getElementById("center_d4").src="/demo/img/1st/left1_blue.png";
+			count7=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==2) {
+			document.getElementById("center_d4").src="/demo/img/1st/left2_blue.png";
+			count7=1;
+			headstatus=-1;
+			count();
+		} else if (headstatus==3) {
+			document.getElementById("center_d4").src="/demo/img/1st/left3_blue.png";
+			count7=0;
+			headstatus=-1;
+			count();
+		} else if (headstatus==4) {
+			document.getElementById("center_d4").src="/demo/img/1st/left4_blue.png";
+			count7=0;
+			headstatus=-1;
+			count();
+		}else {
+			document.getElementById("center_d4").src="";
+			count7=0;
+			headstatus=-1;
+		}
 	}
 </script>
 </head>
@@ -171,38 +443,53 @@
 	</div>
 	</div>
 		
-		<div id="right" style="float: right; width: 600px; height: 600px; padding-right: 18px; padding-top: 15px;" >
-			<div id="righttop" style="background-image: url(/demo/img/1st/1st_right_top.png); width: 600px; height: 50px;">
-			</div>
-			
-			<div id="rightcenter" style="/* background-image: url(/demo/img/1st/before_right_center.png); */ width: 449px; height: 450px; float: left">
-				<table  align="center" cellpadding="0" cellspacing="0">
-					<tr>
-						<td ><div id="" style="" onclick="stopGetMouse()"><img alt="" src="/demo/img/1st/center1.png" ></div></td>
-						<td><div id="" style=""><img alt="" src="/demo/img/1st/center2.png" ></div></td>
-					</tr>
-					<tr>
-						<td><div id="" style=""><img alt="" src="/demo/img/1st/center3.png" ></div></td>
-						<td><div id="" style=""><img alt="" src="/demo/img/1st/center4.png" ></div></td>
-					</tr>
-				</table>
-			</div>
-			
-			<div id="rightright" style="background-image: url(/demo/img/1st/before_right_right.png); width: 120px; height: 536px; float: right; margin-top: 12px; margin-right: 20px;">
-			</div>
-			
-			<div id="rightbuttom" style=" /* background-image: url(/demo/img/1st/1st_right_buttom.png);  */width: 420px; height: 85px; float: left; margin-left: 15px; margin-top: 20px">
-				<table >
-					<tr>
-						<td><div id="left1" style="margin-left: 15px;" onclick="GetMouse()"><img alt="" src="/demo/img/1st/left1.png" ></div></td>
-						<td><div id="left2" style="margin-left: 15px;"><img alt="" src="/demo/img/1st/left2.png" ></div></td>
-						<td><div id="left3" style="margin-left: 15px;"><img alt="" src="/demo/img/1st/left3.png" ></div></td>
-						<td><div id="left4" style="margin-left: 15px;"><img alt="" src="/demo/img/1st/left4.png" ></div></td>
-					</tr>
-				</table>
-			</div>
-			
+	<div id="right" style="float: right; width: 600px; height: 600px; padding-right: 18px; padding-top: 15px;" >
+		<div id="righttop" style="background-image: url(/demo/img/1st/1st_right_top.png); width: 600px; height: 50px;">
 		</div>
+		
+		<!-- center part -->
+		<div id="rightcenter" style="background-image: url(/demo/img/1st/before_center.png); width: 445px; height: 458px; float: left; padding-left:15px;">
+			<table  align="left" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><div id="" class="centericons_a1" style=""></div></td>
+					<td><div id="" class="centericons_a1" style="" onclick="setheadicona2()"><img id="center_a2" alt="" src="" ></div></td>
+					<td><div id="" class="centericons_a2"style=""></div></td>
+					<td><div id="" class="centericons_a2" style="" onclick="setheadicona4()"><img id="center_a4" alt="" src="" ></div></td>
+				</tr>
+				<tr>
+					<td><div id="" class="centericons_b1" style="" onclick="setheadiconb1()"><img id="center_b1" alt="" src="" ></div></td>
+					<td><div id="" class="centericons_b1" style=""></div></td>
+					<td><div id="" class="centericons_b2" style=""></div></td>
+					<td><div id="" class="centericons_b2" style="" onclick="setheadiconb4()"><img id="center_b4" alt="" src="" ></div></td>
+				</tr>
+				<tr>
+					<td><div id="" class="centericons_c1" style=""></div></td>
+					<td><div id="" class="centericons_c1" style="" onclick="setheadiconc2()"><img id="center_c2" alt="" src=""></div></td>
+				</tr>
+				<tr>
+					<td ><div id="" class="centericons_d1" style="" onclick="setheadicond1()"><img id="center_d1" alt="" src="" ></div></td>
+					<td><div id="" class="centericons_d1" style=""></div></td>
+					<td ><div id="" class="centericons_d2" style=""></div></td>
+					<td><div id="" class="centericons_d2" style="" onclick="setheadicond4()"><img id="center_d4" alt="" src="" ></div></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="rightright" style="background-image: url(/demo/img/1st/before_right_right.png); width: 120px; height: 536px; float: right; margin-top: 12px; margin-right: 20px;">
+		</div>
+		
+		<div id="rightbuttom" style="width: 420px; height: 85px; float: left; margin-left: 15px; margin-top: 10px">
+			<table >
+				<tr>
+					<td><div id="left1" style="margin-left: 15px;" onclick="changeleft1()"><img alt="" src="/demo/img/1st/left1.png" ></div></td>
+					<td><div id="left2" style="margin-left: 15px;" onclick="changeleft2()"><img alt="" src="/demo/img/1st/left2.png" ></div></td>
+					<td><div id="left3" style="margin-left: 15px;" onclick="changeleft3()"><img alt="" src="/demo/img/1st/left3.png" ></div></td>
+					<td><div id="left4" style="margin-left: 15px;" onclick="changeleft4()"><img alt="" src="/demo/img/1st/left4.png" ></div></td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
 	</div>
 	
 	<form id="exitgame1st" action="exitgame.action" method="post">
