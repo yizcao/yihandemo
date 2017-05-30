@@ -28,7 +28,7 @@
 }
 </style>
 </head>
-<body style="background-image: url('/demo/img/wizard.jpg')">
+<body style="background-image: url('/demo/img/1st/wizard.jpg')">
 
 	<form id="startgame" action="login.action" method="post">
 		<input type="hidden" name="username"> <input type="hidden"
@@ -43,7 +43,7 @@
 		</center>
 	</form>
 
-	<a href="/demo/testTimer.jsp">test timer</a>
+	<!-- <a href="/demo/testTimer.jsp">test timer</a> -->
 
 
 </body>

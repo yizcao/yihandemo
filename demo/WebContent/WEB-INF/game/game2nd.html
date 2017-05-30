@@ -86,6 +86,8 @@
 	}
 	
 	function newgame(){
+	
+		clickbuttons();
 		min0 = 0;
 		min1 = 0;
 		sec0 = 0;
@@ -98,11 +100,14 @@
 	}
 	
 	function pausetime(){
+		clickbuttons();
 		document.getElementById('timep').innerHTML = min1 + "" + min0 + ":" + sec1 + "" + sec0;
 		clearTimeout(t);
 	}
 	
 	function solved(){
+		
+		clickbuttons();
 		pausetime();
 		document.getElementById('rightcenter').style.background="url(/demo/img/2nd/after_center.png)";
 	}
@@ -120,6 +125,7 @@
 	}
 	
 	function exist(){
+		clickbuttons();
 		/* alert(11); */
 		/* document.getElementById("exitgame1st").submit(); */
 		/* document.getElementById("game1stform").action="exitgame.action"; */
@@ -128,6 +134,7 @@
 	}
 	
 	function succtonext(){
+		playsuccmusic();	
 		document.getElementById("game1stform").action="succ2nd.action";
 		document.getElementById("game1stform").submit();
 	}
@@ -190,10 +197,10 @@
 <script type="text/javascript">
 	var headstatus = -1;
 	
-	var count1 = count2 = count3 = count4 = count5 = count6 = count7 = count8 = 0;
+	var count1 = count2 = count3 = count4 = count5 = count6 = count7 = 0;
 	
 	function count(){
-		if (count1+count2+count3+count4+count5+count6+count7+count8==8) {
+		if (count1+count2+count3+count4+count5+count6+count7==7) {
 			succtonext();
 		}else{
 			return;
@@ -201,20 +208,25 @@
 	}
 	
 	function changeleft1(){
+		clickicons();
 		headstatus = 1;
 	}
 	function changeleft2(){
+		clickicons();
 		headstatus = 2;
 	}
 	function changeleft3(){
+		clickicons();
 		headstatus = 3;
 	}
 	function changeleft4(){
+		clickicons();
 		headstatus = 4;
 	}
 	
 	/* a1 */
 	function setheadicona1(){
+	clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_a1").src="/demo/img/2nd/head1.png";
 			document.getElementById("center_a1").style.visibility = "visible";
@@ -247,6 +259,7 @@
 	}
 	/* a4 */
 	function setheadicona4(){
+	clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_a4").src="/demo/img/2nd/head1.png";
 			document.getElementById("center_a4").style.visibility = "visible";
@@ -279,6 +292,7 @@
 	}
 	/* a2 */
 	function setheadicona2(){
+	clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_a2").src="/demo/img/2nd/head1.png";
 			document.getElementById("center_a2").style.visibility = "visible";
@@ -312,6 +326,7 @@
 	
 	/* b3 */
 	function setheadiconb3(){
+	clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_b3").src="/demo/img/2nd/head1.png";
 			document.getElementById("center_b3").style.visibility = "visible";
@@ -345,6 +360,7 @@
 	
 	/* c2 */
 	function setheadiconc2(){
+	clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_c2").src="/demo/img/2nd/head1.png";
 			document.getElementById("center_c2").style.visibility = "visible";
@@ -376,7 +392,7 @@
 		}
 	}
 	
-	/* c4 */
+	/* c4 
 	function setheadiconc4(){
 		if (headstatus==1) {
 			document.getElementById("center_c4").src="/demo/img/2nd/head1.png";
@@ -408,71 +424,92 @@
 			headstatus=-1;
 		}
 	}
+	*/
 	
 	/* d1 */
 	function setheadicond1(){
+	clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_d1").src="/demo/img/2nd/head1.png";
 			document.getElementById("center_d1").style.visibility = "visible";
-			count7=1;
+			count6=1;
 			headstatus=-1;
 			count();
 		} else if (headstatus==2) {
 			document.getElementById("center_d1").src="/demo/img/2nd/head2.png";
 			document.getElementById("center_d1").style.visibility = "visible";
-			count7=0;
+			count6=0;
 			headstatus=-1;
 			count();
 		} else if (headstatus==3) {
 			document.getElementById("center_d1").src="/demo/img/2nd/head3.png";
 			document.getElementById("center_d1").style.visibility = "visible";
-			count7=0;
+			count6=0;
 			headstatus=-1;
 			count();
 		} else if (headstatus==4) {
 			document.getElementById("center_d1").src="/demo/img/2nd/head4.png";
 			document.getElementById("center_d1").style.visibility = "visible";
-			count7=0;
+			count6=0;
 			headstatus=-1;
 			count();
 		}else {
 			document.getElementById("center_d1").style.visibility = "hidden";
-			count7=0;
+			count6=0;
 			headstatus=-1;
 		}
 	}
 	
 	/* d4 */
 	function setheadicond4(){
+	clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_d4").src="/demo/img/2nd/head1.png";
 			document.getElementById("center_d4").style.visibility = "visible";
-			count8=0;
+			count7=0;
 			headstatus=-1;
 			count();
 		} else if (headstatus==2) {
 			document.getElementById("center_d4").src="/demo/img/2nd/head2.png";
 			document.getElementById("center_d4").style.visibility = "visible";
-			count8=1;
+			count7=1;
 			headstatus=-1;
 			count();
 		} else if (headstatus==3) {
 			document.getElementById("center_d4").src="/demo/img/2nd/head3.png";
 			document.getElementById("center_d4").style.visibility = "visible";
-			count8=0;
+			count7=0;
 			headstatus=-1;
 			count();
 		} else if (headstatus==4) {
 			document.getElementById("center_d4").src="/demo/img/2nd/head4.png";
 			document.getElementById("center_d4").style.visibility = "visible";
-			count8=0;
+			count7=0;
 			headstatus=-1;
 			count();
 		}else {
 			document.getElementById("center_d4").style.visibility = "hidden";
-			count8=0;
+			count7=0;
 			headstatus=-1;
 		}
+	}
+</script>
+
+<!-- music -->
+<script type="text/javascript">
+	function musicplay(){
+		parent.musicclick();
+	}
+	
+	/* click actions */
+	function clickbuttons(){
+		parent.clickleftbuttons();
+	}
+	function clickicons(){
+		parent.clickicon();
+	}
+	function playsuccmusic(){
+		parent.succplaymusic();
 	}
 </script>
 </head>
@@ -512,7 +549,7 @@
 				</tr>
 				<tr id="music" style="width: 160px;height: 50px;">
 					<td>
-						<div onclick="" style="width: 160px;height: 50px;"></div>
+						<div onclick="musicplay()" style="width: 160px;height: 50px;"></div>
 					</td>
 				</tr>
 				<tr id="exit" style="width: 160px;height: 50px;">
@@ -547,12 +584,12 @@
 					<td><div id="" class="centericons_c1" style=""></div></td>
 					<td><div id="" class="centericons_c1" style="" onclick="setheadiconc2()"><img id="center_c2" alt="" src=""></div></td>
 					<td><div id="" class="centericons_c2" style=""></div></td>
-					<td><div id="" class="centericons_c2" style="" onclick="setheadiconc4()"><img id="center_c4" alt="" src=""></div></td>
+					<td><div id="" class="centericons_c2" style=""><img alt="" src="/demo/img/2nd/head1.png"></div></td>
 				</tr>
 				<tr>
 					<td><div id="" class="centericons_d1" style="" onclick="setheadicond1()"><img id="center_d1" alt="" src="" ></div></td>
 					<td><div id="" class="centericons_d1" style=""></div></td>
-					<td><div id="" class="centericons_d2" style=""></div></td>
+					<td><div id="" class="centericons_d2" style=""><img alt="" src="/demo/img/2nd/head3.png" ></div></td>
 					<td><div id="" class="centericons_d2" style="" onclick="setheadicond4()"><img id="center_d4" alt="" src="" ></div></td>
 				</tr>
 			</table>

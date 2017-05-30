@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function submitform(){
+		parent.changebgto2nd();
 		document.getElementById("to2nd").submit();
 	}
 </script>
@@ -20,5 +21,6 @@
 		</form>
 	</div>
 </div>
+
 </body>
 </html>

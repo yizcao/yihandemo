@@ -86,6 +86,7 @@
 	}
 	
 	function newgame(){
+		clickbuttons();
 		min0 = 0;
 		min1 = 0;
 		sec0 = 0;
@@ -98,11 +99,13 @@
 	}
 	
 	function pausetime(){
+		clickbuttons();
 		document.getElementById('timep').innerHTML = min1 + "" + min0 + ":" + sec1 + "" + sec0;
 		clearTimeout(t);
 	}
 	
 	function solved(){
+	clickbuttons();
 		pausetime();
 		document.getElementById('rightcenter').style.background="url(/demo/img/3rd/after_center.png)";
 	}
@@ -119,6 +122,7 @@
 	}
 	
 	function exist(){
+		clickbuttons()
 		/* alert(11); */
 		/* document.getElementById("exitgame1st").submit(); */
 		/* document.getElementById("game1stform").action="exitgame.action"; */
@@ -127,6 +131,7 @@
 	}
 	
 	function succtonext(){
+		playsuccmusic();
 		document.getElementById("game1stform").action="succ3rd.action";
 		document.getElementById("game1stform").submit();
 	}
@@ -200,20 +205,25 @@
 	}
 	
 	function changeleft1(){
+		clickicons();
 		headstatus = 1;
 	}
 	function changeleft2(){
+		clickicons();
 		headstatus = 2;
 	}
 	function changeleft3(){
+		clickicons();
 		headstatus = 3;
 	}
 	function changeleft4(){
+		clickicons();
 		headstatus = 4;
 	}
 	
 	/* a1 */
 	function setheadicona1(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_a1").src="/demo/img/3rd/head1.png";
 			document.getElementById("center_a1").style.visibility = "visible";
@@ -246,6 +256,7 @@
 	}
 	/* a4 */
 	function setheadicona4(){
+		clickicons();	
 		if (headstatus==1) {
 			document.getElementById("center_a4").src="/demo/img/3rd/head1.png";
 			document.getElementById("center_a4").style.visibility = "visible";
@@ -279,6 +290,7 @@
 	
 	/* b2 */
 	function setheadiconb2(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_b2").src="/demo/img/3rd/head1.png";
 			document.getElementById("center_b2").style.visibility = "visible";
@@ -312,6 +324,7 @@
 	
 	/* b3 */
 	function setheadiconb3(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_b3").src="/demo/img/3rd/head1.png";
 			document.getElementById("center_b3").style.visibility = "visible";
@@ -345,6 +358,7 @@
 	
 	/* c2 */
 	function setheadiconc2(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_c2").src="/demo/img/3rd/head1.png";
 			document.getElementById("center_c2").style.visibility = "visible";
@@ -378,6 +392,7 @@
 	
 	/* d1 */
 	function setheadicond1(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_d1").src="/demo/img/3rd/head1.png";
 			document.getElementById("center_d1").style.visibility = "visible";
@@ -411,6 +426,7 @@
 	
 	/* d4 */
 	function setheadicond4(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_d4").src="/demo/img/3rd/head1.png";
 			document.getElementById("center_d4").style.visibility = "visible";
@@ -440,6 +456,24 @@
 			count7=0;
 			headstatus=-1;
 		}
+	}
+</script>
+
+<!-- music -->
+<script type="text/javascript">
+	function musicplay(){
+		parent.musicclick();
+	}
+	
+	/* click actions */
+	function clickbuttons(){
+		parent.clickleftbuttons();
+	}
+	function clickicons(){
+		parent.clickicon();
+	}
+	function playsuccmusic(){
+		parent.succplaymusic();
 	}
 </script>
 </head>
@@ -479,7 +513,7 @@
 				</tr>
 				<tr id="music" style="width: 160px;height: 50px;">
 					<td>
-						<div onclick="" style="width: 160px;height: 50px;"></div>
+						<div onclick="musicplay()" style="width: 160px;height: 50px;"></div>
 					</td>
 				</tr>
 				<tr id="exit" style="width: 160px;height: 50px;">
@@ -500,32 +534,32 @@
 			<table  align="left" cellpadding="0" cellspacing="0">
 				<tr>
 					<td><div id="" class="centericons_a1" style="" onclick="setheadicona1()"><img id="center_a1" alt="" src="" ></div></td>
-					<td><div id="" class="centericons_a1" style=""></div></td>
-					<td><div id="" class="centericons_a2"style=""></div></td>
+					<td><div id="" class="centericons_a1" style="" onclick="clickicons()"></div></td>
+					<td><div id="" class="centericons_a2"style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_a2" style="" onclick="setheadicona4()"><img id="center_a4" alt="" src="" ></div></td>
 				</tr>
 				<tr>
-					<td><div id="" class="centericons_b1" style=""></div></td>
+					<td><div id="" class="centericons_b1" style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_b1" style="" onclick="setheadiconb2()"><img id="center_b2" alt="" src="" ></div></td>
 					<td><div id="" class="centericons_b2" style="" onclick="setheadiconb3()"><img id="center_b3" alt="" src="" ></div></td>
-					<td><div id="" class="centericons_b2" style=""></div></td>
+					<td><div id="" class="centericons_b2" style="" onclick="clickicons()"></div></td>
 				</tr>
 				<tr>
-					<td><div id="" class="centericons_c1" style=""></div></td>
+					<td><div id="" class="centericons_c1" style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_c1" style="" onclick="setheadiconc2()"><img id="center_c2" alt="" src=""></div></td>
-					<td><div id="" class="centericons_c2" style=""></div></td>
-					<td><div id="" class="centericons_c2" style=""></div></td>
+					<td><div id="" class="centericons_c2" style="" onclick="clickicons()"></div></td>
+					<td><div id="" class="centericons_c2" style="" onclick="clickicons()"></div></td>
 				</tr>
 				<tr>
 					<td><div id="" class="centericons_d1" style="" onclick="setheadicond1()"><img id="center_d1" alt="" src="" ></div></td>
-					<td><div id="" class="centericons_d1" style=""></div></td>
-					<td><div id="" class="centericons_d2" style=""></div></td>
+					<td><div id="" class="centericons_d1" style="" onclick="clickicons()"></div></td>
+					<td><div id="" class="centericons_d2" style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_d2" style="" onclick="setheadicond4()"><img id="center_d4" alt="" src="" ></div></td>
 				</tr>
 			</table>
 		</div>
 		
-		<div id="rightright" style="background-image: url(/demo/img/2nd/right.png); width: 120px; height: 536px; float: right; margin-top: 12px; margin-right: 20px;">
+		<div id="rightright" style="background-image: url(/demo/img/2nd/right.png); width: 105px; height: 540px; float: right; margin-top: 0px; margin-right: 20px;">
 		</div>
 		
 		<div id="rightbuttom" style="width: 420px; height: 85px; float: left; margin-left: 15px; margin-top: 10px">

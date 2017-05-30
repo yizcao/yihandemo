@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function submitform(){
+		parent.changebgto3rd();
 		document.getElementById("to3rd").submit();
 	}
 </script>

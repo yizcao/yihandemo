@@ -4,8 +4,77 @@
 <meta charset="UTF-8">
 <title>demo</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	function changebgto2nd(){
+		document.getElementById("bodybg").style.background="url(/demo/img/wizard2nd.png)";
+	}
+	
+	function changebgto3rd(){
+		document.getElementById("bodybg").style.background="url(/demo/img/wizard3rd.png)";
+	}
+	
+	function changebgto1st(){
+		document.getElementById("bodybg").style.background="url(/demo/img/wizard1st.png)";
+	}
+	
+	var musicstatus=0;
+	
+	function musicclick(){
+		if (musicstatus==0) {
+			alert("Music On");
+			musicstatus=1;
+			document.getElementById("bgmusic").play();
+		}else if (musicstatus==1) {
+			alert("Music Off");
+			musicstatus=0;
+			document.getElementById("bgmusic").pause();
+		}
+	}
+	
+	function clickleftbuttons(){
+		if (musicstatus==1) {
+			document.getElementById("buttonmusic").play();
+		}
+	}
+	
+	function clickicon(){
+		if (musicstatus==1) {
+			document.getElementById("iconmusic").play();
+		}
+	}
+	
+	function succplaymusic(){
+		if (musicstatus==1) {
+			document.getElementById("succmusic").play();
+		}
+	}
+	
+	/* music part */
+	function playbgmusic(){
+		document.getElementById("bgmusic").play();
+	}
+	
+	function playleftbuttons(){
+		document.getElementById("buttonmusic").play();
+	}
+	
+	function icontogroud(){
+		document.getElementById("iconmusic").play();
+	} 
+	
+	function succtonext(){
+		document.getElementById("succmusic").play();
+	} 
+	
+	function pausemusic(){
+		document.getElementById("bgmusic").pause();
+		document.getElementById("buttonmusic").pause();
+		document.getElementById("iconmusic").pause();
+	}
+
+</script>
 </head>
-<body onselectstart="return false" oncopy="return false" oncut="return false" style="background-image: url('/demo/img/wizard.jpg')">
+<body id="bodybg" onselectstart="return false" oncopy="return false" oncut="return false" style="background-image: url('/demo/img/wizard1st.png')">
 <center>
 	<iframe id="f1" name="f1" src="/demo/show1stpage" frameborder="0" width="900px" height="750px" scrolling="yes">
 		
@@ -14,5 +83,17 @@
 		
 </center>
 
+<!-- audio -->
+<audio id="bgmusic" src="/demo/music/allback.mp3"></audio>
+<audio id="buttonmusic" src="/demo/music/button.mp3"></audio>
+<audio id=iconmusic src="/demo/music/icon.mp3"></audio>
+<audio id="succmusic" src="/demo/music/succ.wav"></audio>
+
+<!-- <button onclick="playbgmusic()">bg</button>
+<button onclick="playleftbuttons()">button</button>
+<button onclick="icontogroud()">icon</button>
+<button onclick="succtonext()">succ</button>
+
+<button onclick="pausemusic()">pause</button> -->
 </body>
 </html>

@@ -80,6 +80,8 @@
 	}
 	
 	function newgame(){
+	
+		clickbuttons();
 		min0 = 0;
 		min1 = 0;
 		sec0 = 0;
@@ -92,11 +94,13 @@
 	}
 	
 	function pausetime(){
+		clickbuttons();
 		document.getElementById('timep').innerHTML = min1 + "" + min0 + ":" + sec1 + "" + sec0;
 		clearTimeout(t);
 	}
 	
 	function solved(){
+		clickbuttons();
 		pausetime();
 		document.getElementById('rightcenter').style.background="url(/demo/img/1st/1stafter.png)";
 	}
@@ -113,6 +117,7 @@
 	}
 	
 	function exist(){
+		clickbuttons();
 		/* alert(11); */
 		/* document.getElementById("exitgame1st").submit(); */
 		/* document.getElementById("game1stform").action="exitgame.action"; */
@@ -121,6 +126,7 @@
 	}
 	
 	function succtonext(){
+		playsuccmusic();
 		document.getElementById("game1stform").action="succ1st.action";
 		document.getElementById("game1stform").submit();
 	}
@@ -194,19 +200,24 @@
 	}
 	
 	function changeleft1(){
+		clickicons();
 		headstatus = 1;
 	}
 	function changeleft2(){
+		clickicons();
 		headstatus = 2;
 	}
 	function changeleft3(){
+		clickicons();
 		headstatus = 3;
 	}
 	function changeleft4(){
+		clickicons();
 		headstatus = 4;
 	}
 	
 	function setheadicona2(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_a2").src="/demo/img/1st/left1_blue.png";
 			count1=0;
@@ -235,6 +246,7 @@
 	}
 	
 	function setheadicona4(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_a4").src="/demo/img/1st/left1_blue.png";
 			count2=0;
@@ -263,6 +275,7 @@
 	}
 	
 	function setheadiconb1(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_b1").src="/demo/img/1st/left1_blue.png";
 			count3=0;
@@ -291,6 +304,7 @@
 	}
 	
 	function setheadiconb4(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_b4").src="/demo/img/1st/left1_blue.png";
 			count4=1;
@@ -319,6 +333,7 @@
 	}
 	
 	function setheadiconc2(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_c2").src="/demo/img/1st/left1_blue.png";
 			count5=0;
@@ -347,6 +362,7 @@
 	}
 	
 	function setheadicond1(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_d1").src="/demo/img/1st/left1_blue.png";
 			count6=0;
@@ -375,6 +391,7 @@
 	}
 	
 	function setheadicond4(){
+		clickicons();
 		if (headstatus==1) {
 			document.getElementById("center_d4").src="/demo/img/1st/left1_blue.png";
 			count7=0;
@@ -402,6 +419,25 @@
 		}
 	}
 </script>
+
+<!-- music -->
+<script type="text/javascript">
+	function musicplay(){
+		parent.musicclick();
+	}
+	
+	/* click actions */
+	function clickbuttons(){
+		parent.clickleftbuttons();
+	}
+	function clickicons(){
+		parent.clickicon();
+	}
+	function playsuccmusic(){
+		parent.succplaymusic();
+	}
+</script>
+
 </head>
 <body>
 	<!-- dw part:  -->
@@ -411,11 +447,7 @@
 	<div id="lefttime" style="width: 160px; height: 200px; 
 			background-image: url(/demo/img/1st/time_back.png); 
 			">
-		<!-- <div id="timediv" style="margin-top: 100px; height: 0px; text-align: center;">
-			<p id="time" style="color: white; font-size: x-large;">00:00</p>
-		</div>  -->
-		<!--<p id="time" style="color: white; font-size: x-large;">00:00</p>  -->
-		<div style="float: left; margin-top: 130px; width: 160px; text-align: center;">
+			<div style="float: left; margin-top: 130px; width: 160px; text-align: center;">
 			<p id="timep" style="font-size: x-large; color: white;">00:00</p>
 		</div>
 	</div>
@@ -439,7 +471,7 @@
 				</tr>
 				<tr id="music" style="width: 160px;height: 50px;">
 					<td>
-						<div onclick="" style="width: 160px;height: 50px;"></div>
+						<div onclick="musicplay()" style="width: 160px;height: 50px;"></div>
 					</td>
 				</tr>
 				<tr id="exit" style="width: 160px;height: 50px;">
@@ -459,25 +491,25 @@
 		<div id="rightcenter" style="background-image: url(/demo/img/1st/before_center.png); width: 445px; height: 458px; float: left; padding-left:15px;">
 			<table  align="left" cellpadding="0" cellspacing="0">
 				<tr>
-					<td><div id="" class="centericons_a1" style=""></div></td>
+					<td><div id="" class="centericons_a1" style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_a1" style="" onclick="setheadicona2()"><img id="center_a2" alt="" src="" ></div></td>
-					<td><div id="" class="centericons_a2"style=""></div></td>
+					<td><div id="" class="centericons_a2"style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_a2" style="" onclick="setheadicona4()"><img id="center_a4" alt="" src="" ></div></td>
 				</tr>
 				<tr>
 					<td><div id="" class="centericons_b1" style="" onclick="setheadiconb1()"><img id="center_b1" alt="" src="" ></div></td>
-					<td><div id="" class="centericons_b1" style=""></div></td>
-					<td><div id="" class="centericons_b2" style=""></div></td>
+					<td><div id="" class="centericons_b1" style="" onclick="clickicons()"></div></td>
+					<td><div id="" class="centericons_b2" style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_b2" style="" onclick="setheadiconb4()"><img id="center_b4" alt="" src="" ></div></td>
 				</tr>
 				<tr>
-					<td><div id="" class="centericons_c1" style=""></div></td>
+					<td><div id="" class="centericons_c1" style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_c1" style="" onclick="setheadiconc2()"><img id="center_c2" alt="" src=""></div></td>
 				</tr>
 				<tr>
 					<td ><div id="" class="centericons_d1" style="" onclick="setheadicond1()"><img id="center_d1" alt="" src="" ></div></td>
-					<td><div id="" class="centericons_d1" style=""></div></td>
-					<td ><div id="" class="centericons_d2" style=""></div></td>
+					<td><div id="" class="centericons_d1" style="" onclick="clickicons()"></div></td>
+					<td><div id="" class="centericons_d2" style="" onclick="clickicons()"></div></td>
 					<td><div id="" class="centericons_d2" style="" onclick="setheadicond4()"><img id="center_d4" alt="" src="" ></div></td>
 				</tr>
 			</table>
@@ -503,5 +535,7 @@
 	<form id="game1stform" action="exitgame.action" method="post">
 		<input type="hidden" value="exit" />
 	</form>
+	
+	
 </body>
 </html>

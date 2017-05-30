@@ -43,7 +43,7 @@
 		</center>
 	</form>
 
-	<a href="/demo/testTimer.jsp">test timer</a>
+	<!-- <a href="/demo/testTimer.jsp">test timer</a> -->
 
 
 </body>
